@@ -9,14 +9,14 @@ import Vapor
 
 final class TreeController {
     
-    // view with users
-//    func list(_ req: Request) throws -> Future<[Tree]> {
-//        return Tree.query(on: req).all()
-//    }
-//    // create a new user
-//    func create(_ req: Request) throws -> Future<Response> {
-//        return try req.content.decode(Tree.self).flatMap { tree in
-//            return tree.save(on: req)
-//        }
-//    }
+    // view with trees
+    func list(_ req: Request) throws -> Future<[Tree]> {
+        return Tree.query(on: req).all()
+    }
+    // create a new tree
+    func create(_ req: Request) throws -> Future<Tree> {
+        return try req.content.decode(Tree.self).flatMap { tree in
+            return tree.save(on: req)
+        }
+    }
 }

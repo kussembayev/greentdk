@@ -7,22 +7,27 @@
 
 
 import Vapor
+import FluentPostgreSQL
 
-final class Tree: Content {
-    
-    //Add your properties like you normally would in iOS
+final class Tree: PostgreSQLModel {
+    var id: Int?    
     var name: String
     var iin: String
-    var id: Int
-    var lat: Double
-    var long: Double
+    var latitude: Double
+    var longitude: Double
     
     //Convinience method for instanciation of our object
-    init(name: String, iin: String, id: Int, lat: Double, long: Double) {
+    init(name: String, iin: String, id: Int, latitude: Double, longitude: Double) {
         self.name = name
         self.iin = iin
         self.id = id
-        self.lat = lat
-        self.long = long
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
+
+extension Tree : Content {}
+
+extension Tree : Migration {}
+
+extension Tree : Parameter {}
