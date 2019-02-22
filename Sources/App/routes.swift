@@ -13,16 +13,13 @@ public func routes(_ router: Router) throws {
     }
 
     // Example of configuring a controller
-    let todoController = TodoController()
-    router.get("todos", use: todoController.index)
-    router.post("todos", use: todoController.create)
-    router.delete("todos", Todo.parameter, use: todoController.delete)
     
     router.get("trees") { req -> [Tree] in
         var trees = [Tree]()
-        let tree = Tree(name: "Maria", iin: "302", id: 1, lat: 33.30303030, long: 34.00000)
-        let tree2 = Tree(name: "Magdalena", iin: "303", id: 2, lat: 33.30303030, long: 34.00000)
-        let tree3 = Tree(name: "Magdalena", iin: "303", id: 2, lat: 33.30303030, long: 34.00000)
+                
+        let tree = Tree(name: "Maria", iin: "302", id: 1, lat: 45.000909, long: 78.345382)
+        let tree2 = Tree(name: "Magdalena", iin: "303", id: 2, lat: 44.998618, long: 78.347849)
+        
         trees.append(tree)
         trees.append(tree2)
         
