@@ -22,6 +22,7 @@ public func routes(_ router: Router) throws {
         var trees = [Tree]()
         let tree = Tree(name: "Maria", iin: "302", id: 1, lat: 33.30303030, long: 34.00000)
         let tree2 = Tree(name: "Magdalena", iin: "303", id: 2, lat: 33.30303030, long: 34.00000)
+        let tree3 = Tree(name: "Magdalena", iin: "303", id: 2, lat: 33.30303030, long: 34.00000)
         trees.append(tree)
         trees.append(tree2)
         
